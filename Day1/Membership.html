@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <script src ="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            alert('Ready!!!');
+        });
+    </script>
+    
+    <script>
+       
+        /*
+        1. HTTP 
+        2. JSON
+        3. HTML : Element
+        4. 폼태그 , 테이블태그 사용해서 회원가입양식 작성 => 복습필요
+        */
+    
+    function CheckId()
+    {
+        alert('abc');
+        let ele = document.getElementById('btn_check_id');
+        let userId = ele.value;
+        alert(userId);
+        console.log(userId);
+        return false;
+    }
+    
+    function CheckCount()
+    {
+        //alert('check');
+        let eles = document.getElementById('interests');
+        alert(eles.length);
+        let count = 0;
+        for(let i =0;i<eles.length;i++)
+        {
+            if(eles[i].checked)
+            {
+                console.log(eles[i].value);
+                count = count +1;
+            }
+        }
+    }
+    
+    </script>
+</head>
+<body>
+<table border ="1">
+
+    <tr>
+        <th colspan="5">회원가입양식</th>
+    </tr>
+
+    <tr>
+        <th>구분</th> <th>데이터입력</th> <th>유효성검사</th> <th>비고</th>
+    </tr>
+
+    <tr>
+        <td>아이디</td> <td><form><fieldset><input type="text"></fieldset></form></td> <td>8자리,첫글자 <br>영문소문자</td> <td><input type = "button" value="checkbox" onclick="CheckId()"></td>
+    </tr>
+
+    <tr>
+        <td>비밀번호</td> <td><form><fieldset><input type="password"></fieldset></form></td> <td rowspan="2">비밀번호 일치</td> <td></td>
+    </tr>
+
+    <tr>
+        <td>비번확인</td> <td><form><fieldset><input type="password"></fieldset></form></td>  <td></td>
+    </tr>
+
+    <tr>
+        <td>성별</td> <td><form><fieldset>
+            <input type="radio" name = "gender" id ="man"><label>남</label>
+            <input type="radio" name = "gender" id ="woman"><label>여</label></fieldset></form></td>
+             <td></td> <td></td>
+    </tr>
+
+    <tr>
+        <td>관심분야</td> 
+        <td>
+            <form>
+                <fieldset>
+            <label><input type = "checkbox" name ="section" value = "문학">문학</label>
+            <label><input type = "checkbox" name ="section" value = "어학">어학</label>
+            <label><input type = "checkbox" name ="section" value = "정보IT">정보IT</label><br>
+            <label><input type = "checkbox" name ="section" value = "과학">과학</label>
+            <label><input type = "checkbox" name ="section" value = "수학">수학</label>
+            <label><input type = "checkbox" name ="section" value = "예술">예술</label>
+                </fieldset>
+            </form>
+        </td> 
+        <td>2~3개 사이 선택</td> <td><input type = "button" value="checkbox" onclick="CheckCount()"></td>
+    </tr>
+
+    <tr>
+        <td>자기소개</td> <td><textarea rows="10" cols="30"></textarea></td> <td></td> <td></td>
+    </tr>
+
+    <tr>
+        <td colspan="5"><input type = "submit" value ="가입"><input type = "submit" value ="초기화"></td>
+    </tr>
+
+    
+</table>
+
+<div id ='interests'></div>
+<div id ='btn_check_id'></div>
+
+</body>
+</html>

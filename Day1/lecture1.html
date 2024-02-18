@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            margin: 0px auto;
+            border: solid 1px black;
+            border-collapse: collapse;
+        }
+        tr, td {
+            border : solid 1px black;
+        }
+
+        .red {
+            color: red;
+        }
+
+        .blue {
+            color: blue;
+        }
+
+        #purple {
+            color: purple;
+        }
+    </style>
+    <script>
+        function test(){
+            //alert('hello');
+            console.log('welcome');
+            let ele = document.getElementById('position');
+            ele.innerHTML = "Welcome Javascript!";
+        }
+
+        //test();
+        function now(){
+            //현재 시간을 출력하는 코드 작성
+            let date = new Date();
+            let hour = date.getHours();
+            let min = date.getMinutes();
+            let sec = date.getSeconds();
+            let time = `${hour}:${min}:${sec}`;
+            let ele = document.getElementById('position');
+            ele.innerHTML = time;
+        }
+
+        function example(){
+            setTimeout(() => {
+                alert("hello callback");
+            }, 3000);
+        }
+
+        //test();
+    </script>
+</head>
+<body>
+    <div id="position"></div>
+    <table>
+        <tr><td class="red">일</td><td>월</td><td>화</td><td>수</td><td>목</td><td>금</td><td class="blue">토</td></tr>
+        <tr><td class="red">1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td class="blue">7</td></tr>
+        <tr><td class="red">8</td><td>9</td><td>10</td><td>11</td><td id="purple">12</td><td>13</td><td class="blue">14</td></tr>
+    </table>
+    <input type="button" value="call" onclick="test()">
+    <input type="button"  value="current time" onclick="now()">
+<script>
+    test();
+</script>
+</body>
+</html>
