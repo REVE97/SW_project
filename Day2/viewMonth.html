@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            margin: 50px auto;
+            border: solid 1px black;
+            border-collapse : collapse;
+        }
+        tr,td{
+            border :solid 1px black;
+        }
+
+        .red{
+            color: red;
+        }
+
+        .blue{
+            color:blue;
+        }
+
+        #purple{
+            color:purple;
+        }
+    </style>
+    <script>
+        // 2024년 1월,5월,9월 달력을 구현
+        
+        function viewMonth1()
+        {
+            let ele = document.getElementById("cal");
+            ele.innerHTML = "1월";
+
+            let table 
+        }
+
+        function viewMonth5()
+        {
+            let ele = document.getElementById("cal");
+            ele.innerHTML = "5월";
+        }
+
+        function viewMonth9()
+        {
+            let ele = document.getElementById("cal");
+            ele.innerHTML = "9월";
+        }
+
+    </script>
+</head>
+<body>
+    
+    <div id ="cal">Calendar</div>
+    <input type = "button" value = "1월" onclick="viewMonth1()">
+    <input type = "button" value = "5월" onclick="viewMonth5()">
+    <input type = "button" value = "9월" onclick="viewMonth9()">
+
+    <table border ="1">
+        
+        <tr>
+            <caption>1월</caption> 
+        </tr>
+
+        <tr>
+            <td class ="red">일</td> <td>월</td> <td>화</td> <td>수</td> <td>목</td> <td>금</td> <td class ="blue">토</td>
+        </tr>
+        
+        <tr>
+            <td class ="red">31</td> <td>1</td> <td>2</td> <td>3</td> <td>4</td> <td>5</td> <td class="blue">6</td>
+        </tr>
+
+        <tr>
+            <td class ="red">7</td> <td>8</td> <td>9</td> <td>10</td> <td>11</td> <td>12</td> <td class="blue">13</td>
+        </tr>
+
+        <tr>
+            <td class ="red">14</td> <td>15</td> <td>16</td> <td>17</td> <td>18</td> <td>19</td> <td class="blue">20</td>
+        </tr>
+
+        <tr>
+            <td class ="red">21</td> <td>22</td> <td>23</td> <td>24</td> <td>25</td> <td>26</td> <td class="blue">27</td>
+        </tr>
+
+        <tr>
+            <td class ="red">28</td> <td>29</td> <td>30</td> <td>31</td> <td></td> <td></td> <td></td>
+        </tr>
+    
+    </table>
+
+</body>
+</html>

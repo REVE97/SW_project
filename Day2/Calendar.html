@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        /*
+        1. td class , td id => <style> 태그에 적용
+        2. function (함수 이용)
+        3. Date 함수 이용
+        4. 실시간 시각이 바뀌는 시계 구현 => Timer.html
+        */
+
+        function test()
+        {
+            //alert('hello');
+            //console.log("welcome!");
+            let ele = document.getElementById('position');
+            ele.innerHTML = "<h1>Welcome Javascript!</h1>";
+        }
+
+        test();
+
+        function now()
+        {
+            // 현재 시간을 출력하는 코드 작성
+            let date = new Date();
+            let hour = date.getHours();
+            let min = date.getMinutes();
+            let sec = date.getSeconds();
+            let time = `${hour}:${min}:${sec}`;  // 수정필요
+            let ele = document.getElementById('clock');
+            ele.innerHTML = time;
+        }
+
+        now();
+
+        function example()
+        {
+            setTimeout(() => {
+                alert("hello callback");
+            },3000);
+        }
+
+        example();
+
+       
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            margin: 50px auto;
+            border: solid 1px black;
+            border-collapse : collapse;
+        }
+        tr,td{
+            border :solid 1px black;
+        }
+
+        .red{
+            color: red;
+        }
+
+        .blue{
+            color:blue;
+        }
+
+        #purple{
+            color:purple;
+        }
+    </style>
+</head>
+<body>
+    <div id ='position'></div>
+    <div id ='clock'></div>
+    
+    <table>
+        <tr>
+            <td class ="red">일</td> <td>월</td> <td>화</td> <td>수</td> <td>목</td> <td>금</td> <td class ="blue">토</td>
+        </tr>
+        
+        <tr>
+            <td class ="red">1</td> <td>2</td> <td>3</td> <td>4</td> <td>5</td> <td>6</td> <td class="blue">7</td>
+        </tr>
+
+        <tr>
+            <td class ="red">8</td> <td>9</td> <td>10</td> <td>11</td> <td id="purple">12</td> <td>13</td> <td class="blue">14</td>
+        </tr>
+    </table>
+
+    <input type="button" value="call" onclick="test()">
+    <input type="button" value="current time" onclick="now()"> 
+</body>
+</html>
