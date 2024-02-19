@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        // 각 버튼을 누르면 이미지 출력
+        /*
+        1. jQuery 사용
+        */
+        
+        function function1()
+        {
+            let img1 = document.getElementById("img1");
+            img1.innerHTML="image1.png";
+        }
+
+        function function2()
+        {
+            let img2 = document.getElementById("img2");
+            img2.innerHTML="image2.png";
+        }
+
+        function function3()
+        {
+            let img3 = document.getElementById("img3");
+            img3.innerHTML="image3.png";
+        }
+    </script>
+</head>
+<body>
+    <img src = "./img/image1.png" id ="img1">
+    <img src = "./img/image2.png" id ="img2">
+    <img src = "./img/image3.png" id ="img3">
+    
+    <input type = "button" value = "1" onclick="function1()">
+    <input type = "button" value = "2" onclick="function2()">
+    <input type = "button" value = "3" onclick="function3()">
+</body>
+</html>

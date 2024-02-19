@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function a(){
+            alert('a');
+            let ele = document.getElementById('image1');
+            ele.innerHTML = '<img src="element.png" width="200px" height="100px">';
+        }
+
+        function b(){
+            alert('b');
+            let ele = document.getElementById('image2');
+            ele.setAttribute('src','element.png');
+        }
+    </script>
+</head>
+<body>
+    
+    <div id="image1"></div>
+    <input type="button" value="btn1" onclick="a()">
+    <input type="button" value="btn2" onclick="b()">
+    <input type="button" value="btn3" onclick="c()">
+    <img src="" alt="test" id="image2">
+</body>
+</html>
