@@ -6,9 +6,31 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.sql.DataSource;
+
 public class ConnectionManager {
 
 	public static Connection getConnection() {
+		Connection con = null;
+		try {
+			Context envCtx = new InitialContext();
+			Context ctx = (Context)envCtx.lookup("java:/comp/env/");
+			DataSource ds = (DataSource)ctx.lookup("jdbc/TestDB");
+			con = ds.getConnection();
+		} catch (NamingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return con;
+	}
+	
+	public static Connection getConnectionOld() {
 		Connection con = null;
 		String id = "root";
 		String pwd = "1q2w3e4r";
