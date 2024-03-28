@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="./list" method="post">
+    <table>
+        <tr>
+            <td>id</td><td><input type="text" name="userId" id="userId" th:value="${dto.userId}" readonly="readonly"></td><td></td>
+        </tr>
+        <tr>
+            <td>name</td><td><input type="text" name="userName" id="userName" th:value="${dto.userName}" readonly="readonly"></td><td></td>
+        </tr>
+        <tr>
+            <td>pwd</td><td><input type="text" name="userPwd" id="userPwd" th:value="${dto.userPwd}" readonly="readonly"></td><td></td>
+        </tr>
+        <tr>
+            <td>date</td>
+            <td>
+                <input type="text" name="registDate" id="registDate"
+                       th:value="${#dates.format(dto.registDate,'yyyy/MM/dd HH:mm:ss')}" readonly="readonly">
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="to List"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
