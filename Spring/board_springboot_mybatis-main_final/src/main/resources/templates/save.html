@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        table{
+        border-collapse:collapse;
+        border-spacing: 10px 10px;
+        }
+
+        tr,td{
+        border: 2px solid gray;
+        }
+    </style>
+</head>
+<body>
+<form action="/save" method="post" enctype="multipart/form-data">
+    <table border="1" width="500px" height="200px">
+        <tr>
+            <td><h4 style="text-align:center;">제목:</h4></td>
+            <td><input type="text" name="boardTitle" placeholder="제목을 입력하시오.." maxlength="10"></td>
+        </tr>
+
+        <tr>
+            <td><h4 style="text-align:center;">작성자:</td>
+            <td><input type="text" name="boardWriter" placeholder="ID" maxlength="10"></td>
+        </tr>
+
+        <tr>
+            <td><h4 style="text-align:center;">비밀번호:</td>
+            <td><input type="text" name="boardPass" placeholder="Pwd" maxlength="10"></td>
+        </tr>
+
+        <tr>
+            <td><h4 style="text-align:center;">내용:</td>
+            <td><textarea name="boardContents" cols="30" rows="10"></textarea></td>
+        </tr>
+        <tr>
+            <td><h4 style="text-align:center;">파일:</td>
+            <td><input type="file" name="boardFile" multiple></td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit" value="작성"><input type="button" value="뒤로가기" onclick="history.back()"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

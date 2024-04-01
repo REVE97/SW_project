@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        table{
+        border-collapse:collapse;
+        border-spacing: 10px 10px;
+        }
+
+        tr,td{
+        border: 2px solid gray;
+        }
+    </style>
+</head>
+<body>
+<form th:action="@{|/update/${board.id}|}" method="post" name="updateForm">
+
+    <table border="1" width="500px" height="200px">
+        <input type="hidden" name="id" th:value="${board.id}">
+        <tr>
+            <td><h4 style="text-align:center;">작성자:</h4></td><td><input type="text" name="boardWriter" th:value="${board.boardWriter}" readonly></td>
+        </tr>
+        <tr>
+            <td><h4 style="text-align:center;">제목:</h4></td><td><input type="text" name="boardTitle" th:value="${board.boardTitle}"></td>
+        </tr>
+        <tr>
+            <td><h4 style="text-align:center;">비밀번호:</h4></td><td><input type="text" name="boardPass" id="board-pass"></td>
+        </tr>
+        <tr>
+            <td><h4 style="text-align:center;">내용:</h4></td><td><textarea name="boardContents" cols="30" rows="10" th:text="${board.boardContents}"></textarea></td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="button" value="수정" onclick="board_update()"><input type="button" value="뒤로가기" onclick="history.back()"></td>
+        </tr>
+    </table>
+</form>
+</body>
+<script th:inline="javascript">
+    const board_update = () => {
+        const boardPass = document.getElementById("board-pass").value;
+        const passDB = [[${board.boardPass}]];
+        if (boardPass == passDB) {
+            updateForm.submit();
+        } else {
+            alert("비밀번호가 틀립니다!!");
+        }
+    }
+</script>
+</html>

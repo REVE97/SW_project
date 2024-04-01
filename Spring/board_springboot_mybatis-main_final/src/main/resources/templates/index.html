@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>게시판</title>
+
+    <style>
+        .hr1 {
+         border: 0;
+         height: 2px;
+         background:  #d3d3d3;
+        }
+
+        .greylist {
+          width: 80px;
+          height: 30px;
+          font-weight: 900;
+          color: white;
+          text-align: center;
+          background: grey;
+          border: solid 2px white;
+          border-radius: 5px;
+        }
+
+         .gradient {
+          width: 80px;
+          height: 30px;
+          font-weight: 900;
+          color: white;
+          text-align: center;
+          background: linear-gradient( to bottom, grey, black );
+          border: solid 2px white;
+          border-radius: 5px;
+        }
+
+        .right {
+          float: right;
+        }
+
+        .center {
+          text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+<h2  style="font-size:30px; font-style:italic; " >게시판</h2>
+
+<hr clsss="hr1">
+
+<span class="center">
+<a href="/save">
+    <input type="button" value="글 작성" class="greylist">
+</a>
+<a href="/list">
+    <input type="button" value="목록" class="gradient">
+</a>
+</span>
+</body>
+</html>
